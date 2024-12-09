@@ -1,3 +1,13 @@
+# Quickstart guide
+
+To begin developing a new website with this starter repo
+- install docker 
+- pull this repository
+- build the mongo container using the 'starter-mongo' Dockerfile
+- run the Payload app with 'npm run dev'
+
+Each mongo-db container logically encapsulates a new website using this repository.
+
 # Payload Website Template
 
 This is the official [Payload Website Template](https://github.com/payloadcms/payload/blob/main/templates/website). Use it to power websites, blogs, or portfolios from small to enterprise. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
