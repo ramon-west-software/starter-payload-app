@@ -8,4 +8,4 @@ EXPOSE 27017
 CMD ["mongod", "--bind_ip_all"]
 
 # docker build -t payload-mongodb-starter .
-# docker run --name starter-site-mongo -p 27017:27017 -d payload-mongodb-starter
+# docker run --name ramon-personal-website -p 27017:27017 -d payload-mongodb-starter
