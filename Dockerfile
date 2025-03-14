@@ -1,24 +1,21 @@
-FROM node:18.8-alpine as base
+# Linode instance
+# Use Node.js image
+FROM node:18
 
-FROM base as builder
+# Set working directory
+WORKDIR /payload-app-starter
 
-WORKDIR /home/node/app
-COPY package*.json ./
+# Copy package files first to optimize caching
+COPY package.json package-lock.json ./
 
+# Install dependencies
+RUN npm install --legacy-peer-deps
+
+# Copy the rest of the application files
 COPY . .
-RUN yarn install
-RUN yarn build
 
-FROM base as runtime
-
-ENV NODE_ENV=production
-
-WORKDIR /home/node/app
-COPY package*.json  ./
-COPY yarn.lock ./
-
-RUN yarn install --production
-
+# Expose the default Payload port
 EXPOSE 3000
 
-CMD ["node", "dist/server.js"]
+# Start the application
+CMD ["npm", "run", "dev"]
