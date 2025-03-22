@@ -17,8 +17,8 @@ export const generateMeta = async (args: {
     `${getServerSideURL()}`
 
   const title = doc?.meta?.title
-    ? doc?.meta?.title + ' | Ramon West - Software Consulting'
-    : 'Ramon West - Software Consulting'
+    ? doc?.meta?.title + ' | Ramon West Software and Consulting'
+    : 'Ramon West Software and Consulting'
 
   return {
     description: doc?.meta?.description,
