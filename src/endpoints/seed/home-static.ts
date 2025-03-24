@@ -2,6 +2,7 @@ import type { Page } from '@/payload-types'
 
 // Used for pre-seeded content so that the homepage is not empty
 // @ts-expect-error
+const SITE_TITLE = process.env.SITE_TITLE;
 export const homeStatic: Page = {
   slug: 'home',
   _status: 'published',
@@ -20,7 +21,7 @@ export const homeStatic: Page = {
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'Ramon West Software and Consulting',
+                text: SITE_TITLE,
                 version: 1,
               },
             ],
@@ -81,8 +82,8 @@ export const homeStatic: Page = {
     },
   },
   meta: {
-    description: 'Ramon West Software and Consulting.',
-    title: 'Ramon West Software and Consulting',
+    description: SITE_TITLE,
+    title: SITE_TITLE,
   },
   title: 'Home',
 }

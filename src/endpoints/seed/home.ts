@@ -1,5 +1,5 @@
 import type { RequiredDataFromCollectionSlug } from 'payload'
-
+const SITE_TITLE = process.env.SITE_TITLE
 export const home: RequiredDataFromCollectionSlug<'pages'> = {
   slug: 'home',
   _status: 'published',
@@ -38,7 +38,7 @@ export const home: RequiredDataFromCollectionSlug<'pages'> = {
                 format: 0,
                 mode: 'normal',
                 style: '',
-                text: 'Ramon West Software and Consulting',
+                text: SITE_TITLE,
                 version: 1,
               },
             ],
@@ -658,10 +658,10 @@ export const home: RequiredDataFromCollectionSlug<'pages'> = {
     },
   ],
   meta: {
-    description: 'An open-source website built with Payload and Next.js.',
+    description: SITE_TITLE,
     // @ts-ignore
     image: '{{IMAGE_1}}',
-    title: 'Ramon West Software and Consulting',
+    title: SITE_TITLE,
   },
   title: 'Home',
 }

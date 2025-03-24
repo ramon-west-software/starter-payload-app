@@ -14,10 +14,12 @@ import { beforeSyncWithSearch } from '@/search/beforeSync'
 import { Page, Post } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
 
+const SITE_TITLE = process.env.SITE_TITLE;
+
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc?.title
-    ? `${doc.title} | Ramon West Software and Consulting`
-    : 'Ramon West Software and Consulting'
+    ? `${doc.title} | ${SITE_TITLE}`
+    : SITE_TITLE
 }
 
 const generateURL: GenerateURL<Post | Page> = ({ doc }) => {

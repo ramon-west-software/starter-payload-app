@@ -5,6 +5,8 @@ import type { Page, Post } from '../payload-types'
 import { mergeOpenGraph } from './mergeOpenGraph'
 import { getServerSideURL } from './getURL'
 
+const SITE_TITLE = process.env.SITE_TITLE;
+
 export const generateMeta = async (args: {
   doc: Partial<Page> | Partial<Post>
 }): Promise<Metadata> => {
@@ -17,8 +19,8 @@ export const generateMeta = async (args: {
     `${getServerSideURL()}`
 
   const title = doc?.meta?.title
-    ? doc?.meta?.title + ' | Ramon West Software and Consulting'
-    : 'Ramon West Software and Consulting'
+    ? doc?.meta?.title + ` | ${SITE_TITLE}`
+    : SITE_TITLE;
 
   return {
     description: doc?.meta?.description,

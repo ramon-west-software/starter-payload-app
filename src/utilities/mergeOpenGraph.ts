@@ -1,16 +1,18 @@
 import type { Metadata } from 'next'
 import { getServerSideURL } from './getURL'
 
+const SITE_TITLE = process.env.SITE_TITLE;
+
 const defaultOpenGraph: Metadata['openGraph'] = {
   type: 'website',
-  description: 'Ramon West Software and Consulting.',
+  description: SITE_TITLE,
   images: [
     {
       url: `${getServerSideURL()}/ramon-west-software-ans-consulting-image.webp`,
     },
   ],
-  siteName: 'Ramon West Software and Consulting',
-  title: 'Ramon West Software and Consulting',
+  siteName: SITE_TITLE,
+  title: SITE_TITLE,
 }
 
 export const mergeOpenGraph = (og?: Metadata['openGraph']): Metadata['openGraph'] => {
